@@ -1,0 +1,29 @@
+{
+  "name": "typed-eventbus",
+  "version": "0.1.0",
+  "description": "Strictly typed eventbus for Typescript",
+  "author": "Mikhail Dezhurko (https://github.com/mdezh)",
+  "license": "MIT",
+  "repository": "github:mdezh/typed-eventbus",
+  "keywords": [
+    "ts",
+    "typescript",
+    "eventbus",
+    "typed",
+    "event-bus",
+    "events",
+    "subscriber",
+    "publisher"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}

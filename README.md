@@ -1,2 +1,2 @@
 # typed-eventbus
-Simple typed eventbus for TypeScript
+Simple strictly typed eventbus for TypeScript
