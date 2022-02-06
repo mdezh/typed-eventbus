@@ -1,5 +1,5 @@
 {
-  "name": "typed-eventbus",
+  "name": "@mdezh/typed-eventbus",
   "version": "0.1.0",
   "description": "Strictly typed eventbus for Typescript",
   "author": "Mikhail Dezhurko (https://github.com/mdezh)",
