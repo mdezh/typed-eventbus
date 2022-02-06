@@ -1,1 +1,1 @@
-export { default } from "./eventbus";
+export * from "./eventbus";

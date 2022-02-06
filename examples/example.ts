@@ -1,4 +1,4 @@
-import EventBus from "../src";
+import { EventBus } from "../src";
 
 type MyEvents = {
   next: (next: number) => void;

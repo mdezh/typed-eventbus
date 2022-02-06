@@ -3,7 +3,7 @@ A simple bus for sending strictly typed events from publishers to subscribers. A
 
 # Usage
 ```typescript
-import EventBus from "@mdezh/typed-eventbus";
+import { EventBus } from "@mdezh/typed-eventbus";
 
 // create a list of all possible events and signatures
 // of their handlers for the event bus

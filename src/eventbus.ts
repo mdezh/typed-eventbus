@@ -2,7 +2,7 @@ type EventMap = {
   [eventName: string]: (...args: any[]) => void;
 }
 
-class EventBus<T extends EventMap> {
+export class EventBus<T extends EventMap> {
   private listeners: Map<keyof T, Set<T[keyof T]>> = new Map();
 
   publish<E extends keyof T>(eventName: E, ...args: Parameters<T[E]>): void {
@@ -33,5 +33,3 @@ class EventBus<T extends EventMap> {
   }
 
 }
-
-export default EventBus;
