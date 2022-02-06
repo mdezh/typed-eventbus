@@ -1,5 +1,8 @@
 # A simple strictly typed eventbus
-A simple bus for sending strictly typed events from publishers to subscribers. Allows autocomplete in VS Code.
+A simple bus for sending strictly typed events from publishers to subscribers.
+- Allows autocomplete in VS Code
+- Tiny
+- Dependency-free
 
 # Usage
 ```typescript
