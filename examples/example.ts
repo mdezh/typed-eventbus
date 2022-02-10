@@ -8,7 +8,7 @@ const eventBus = new EventBus<MyEvents>();
 
 const unsubscribe = eventBus.subscribe(
   'next',
-  (value: number) => { console.log('receive', value) }
+  (value: number) => { console.log('receive', value); },
 );
 
 let counter = 0;

@@ -9,9 +9,7 @@ export class EventBus<T extends EventMap> {
     const eventListeners = this.listeners.get(eventName);
     if (!eventListeners) return;
 
-    for (const listener of eventListeners) {
-      listener(...args);
-    }
+    eventListeners.forEach((listener) => listener(...args));
   }
 
   subscribe<E extends keyof T>(eventName: E, listener: T[E]): () => void {
@@ -31,5 +29,6 @@ export class EventBus<T extends EventMap> {
       }
     };
   }
-
 }
+
+export default EventBus;
