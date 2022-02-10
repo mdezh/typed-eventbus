@@ -2,7 +2,7 @@
 A simple bus for sending strictly typed events from publishers to subscribers.
 - Allows autocomplete in VS Code
 - Tiny and lightweight
-- Dependency-free
+- Dependency-free (uses devDependencies only)
 
 # Usage
 ```typescript
