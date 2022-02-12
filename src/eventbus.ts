@@ -1,6 +1,6 @@
 type EventMap = {
   [eventName: string]: (...args: any[]) => void;
-}
+};
 
 export class EventBus<T extends EventMap> {
   private listeners: Map<keyof T, Set<T[keyof T]>> = new Map();

@@ -1,15 +1,14 @@
-import { EventBus } from "../src";
+import { EventBus } from '../src';
 
 type MyEvents = {
   next: (next: number) => void;
-}
+};
 
 const eventBus = new EventBus<MyEvents>();
 
-const unsubscribe = eventBus.subscribe(
-  'next',
-  (value: number) => { console.log('receive', value); },
-);
+const unsubscribe = eventBus.subscribe('next', (value: number) => {
+  console.log('receive', value);
+});
 
 let counter = 0;
 
