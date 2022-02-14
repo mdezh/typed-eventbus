@@ -1,6 +1,6 @@
 {
   "name": "@mdezh/typed-eventbus",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Strictly typed eventbus for Typescript",
   "author": "Mikhail Dezhurko (https://github.com/mdezh)",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx --cache",
-    "check-linter-rules": "eslint-config-prettier src/*.ts src/**/*.ts",
+    "check-linter-rules": "eslint-config-prettier src/*.{ts,tsx,js,jsx} src/**/*.{ts,tsx,js,jsx}",
     "prettier-check": "prettier --check .",
     "prettier-format": "prettier --write .",
     "fix-staged": "pretty-quick --staged && lint-staged",
