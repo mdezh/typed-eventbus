@@ -34,5 +34,26 @@
       }
     ],
     "no-shadow": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/test/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+      "env": {
+        "jest": true
+      },
+      "settings": {
+        "jest": {
+          "version": 27
+        }
+      },
+      "plugins": ["jest"],
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+      }
+    }
+  ]
 }
