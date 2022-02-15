@@ -5,6 +5,7 @@ A simple bus for sending strictly typed events from publishers to subscribers.
 - Allows autocomplete in VS Code
 - Tiny and lightweight
 - Dependency-free (uses devDependencies only)
+- 100% unit test coverage
 
 # Usage
 

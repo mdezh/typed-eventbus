@@ -1,6 +1,6 @@
 {
   "name": "@mdezh/typed-eventbus",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Strictly typed eventbus for Typescript",
   "author": "Mikhail Dezhurko (https://github.com/mdezh)",
   "license": "MIT",
