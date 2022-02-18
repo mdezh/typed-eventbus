@@ -3,29 +3,29 @@ type EventMap = {
 };
 
 export class EventBus<T extends EventMap> {
-  private listeners: Map<keyof T, Set<T[keyof T]>> = new Map();
+  private eventListeners: Map<keyof T, Set<T[keyof T]>> = new Map();
 
   publish<E extends keyof T>(eventName: E, ...args: Parameters<T[E]>): void {
-    const eventListeners = this.listeners.get(eventName);
-    if (!eventListeners) return;
+    const listeners = this.eventListeners.get(eventName);
+    if (!listeners) return;
 
-    eventListeners.forEach((listener) => listener(...args));
+    listeners.forEach((listener) => listener(...args));
   }
 
   subscribe<E extends keyof T>(eventName: E, listener: T[E]): () => void {
-    if (!this.listeners.has(eventName)) {
-      this.listeners.set(eventName, new Set());
+    if (!this.eventListeners.has(eventName)) {
+      this.eventListeners.set(eventName, new Set());
     }
-    const eventListeners = this.listeners.get(eventName)!;
-    eventListeners.add(listener);
+    const listeners = this.eventListeners.get(eventName)!;
+    listeners.add(listener);
 
     return () => {
-      const eventListeners = this.listeners.get(eventName);
-      if (!eventListeners?.has(listener)) return;
+      const listeners = this.eventListeners.get(eventName);
+      if (!listeners?.has(listener)) return;
 
-      eventListeners.delete(listener);
-      if (eventListeners.size === 0) {
-        this.listeners.delete(eventName);
+      listeners.delete(listener);
+      if (listeners.size === 0) {
+        this.eventListeners.delete(eventName);
       }
     };
   }
