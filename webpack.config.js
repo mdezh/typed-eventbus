@@ -1,5 +1,10 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+
+/* eslint-disable import/no-extraneous-dependencies */
+const TerserPlugin = require('terser-webpack-plugin');
+/* eslint-enable import/no-extraneous-dependencies */
+
+const packageName = require('./package.json').name;
 
 module.exports = {
   entry: './src/index.ts',
@@ -21,11 +26,23 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     library: {
-      name: '@mdezh/typed-eventbus',
+      name: packageName,
       type: 'commonjs',
     },
     clean: true,
   },
-  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          mangle: {
+            properties: {
+              regex: /^_[a-zA-Z]\w*/,
+            },
+          },
+        },
+      }),
+    ],
+  },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 };
