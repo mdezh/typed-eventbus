@@ -3,6 +3,7 @@ export type EventMap = {
 };
 
 export class EventBus<T extends EventMap> {
+  // use _ as prefix for private properties we want minify by Terser
   private _eventListeners: Map<keyof T, Set<T[keyof T]>> = new Map();
 
   publish<E extends keyof T>(eventName: E, ...args: Parameters<T[E]>): void {
